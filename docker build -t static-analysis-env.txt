@@ -1,0 +1,5 @@
+docker build -t static-analysis-env .
+docker run -it -p 9000:9000 -v D:\SAST:/project static-analysis-env
+docker exec -it --user root <container_id> /bin/bash
+sed -i 's/use_embedded_jre=true/use_embedded_jre=false/' /opt/sonar-scanner-4.8.0.2856-linux/bin/sonar-scanner
+cd /project
